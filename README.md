@@ -48,7 +48,7 @@ Comparison uses the exported source records, including properties, body HTML, an
 
 ## Install
 
-When this plugin is listed, open Settings, Community plugins, then Browse. Search for WordPress WXR Import, select Install, and enable it.
+Open Settings, Community plugins, then Browse. Search for WordPress WXR Import, select Install, and enable it.
 
 For manual installation, copy `main.js`, `manifest.json`, and `styles.css` from a release into `<vault>/.obsidian/plugins/wordpress-wxr-import/`. Reload community plugins and enable it. The minimum Obsidian version is 1.13.4. The code uses browser and public Obsidian APIs.
 
@@ -63,6 +63,8 @@ For manual installation, copy `main.js`, `manifest.json`, and `styles.css` from 
 Start with a small export. Check its body formatting and dates before you use a larger archive. The plugin reads the selected file outside the vault through the file picker. It writes the output inside the vault. Keep the original XML as a separate backup.
 
 ## Settings
+
+After a minor or major update, this plugin opens one What's new tab in the background. The tab and settings card suggest other NoteMods plugins and Zovo Chat and link to notemods.com for feedback ([privacy](https://notemods.com/privacy/)). The tab sends no data. Turn the tab off in Settings.
 
 The settings tab shows the import limits and GitHub Sponsors controls. The import window holds the destination folder. With Pro active, it also shows profile names and field mapping controls. Save profile replaces the stored profile with the same name. Up to 30 profiles can be stored. Sign out turns off profile and comparison access; your created notes remain readable.
 

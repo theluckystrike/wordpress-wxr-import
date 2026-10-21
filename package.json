@@ -1,6 +1,6 @@
 {
 	"name": "wordpress-wxr-import",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"private": true,
 	"description": "Import WordPress XML exports as notes with dates, tags, and comments.",
 	"main": "main.js",

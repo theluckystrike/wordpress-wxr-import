@@ -7,12 +7,16 @@ import { SPONSORS, bindPro, isPro, resetPro } from './pro';
 import { WordpressWxrImportSettingTab, normalizeSettings, type WordpressWxrImportSettings } from './settings';
 import { ImportModal } from './modal';
 import { cleanMapping, folderPath, planImport, readSnapshot, writePlan, type Plan, type Profile } from './model';
+import { setupHello } from './hello/index';
+import WHATS_NEW from './whats-new.json';
 export default class WordpressWxrImportPlugin extends Plugin {
  settings: WordpressWxrImportSettings = { profiles: [] };
  pro: SponsorsManager | null = null;
  private writing = false;
  private modals = new Set<ImportModal>();
  async onload(): Promise<void> {
+   // First: "What's new" reads its state before the settings load (packages/hello). It does not wait.
+   setupHello(this, WHATS_NEW);
   await this.loadSettings();
   const pro = createGitHubSponsors(this.app, this.manifest.id, SPONSORS, this);
   pro.init(); this.pro = pro; bindPro(pro);
