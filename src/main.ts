@@ -1,9 +1,9 @@
 /* WordPress and Pro keep their product spelling in UI labels. */
 /* eslint obsidianmd/ui/sentence-case: ["warn", { "brands": ["WordPress", "Pro"], "acronyms": ["XML", "WXR", "UTF", "UTF-8"] }] -- Keep product names and XML encoding spelling in UI labels. */
-import { Notice, Plugin, TFile } from 'obsidian';
+import { Plugin, TFile } from 'obsidian';
 import type { SponsorsManager } from './license/index';
 import { createGitHubSponsors } from './license/github-obsidian';
-import { SPONSORS, bindPro, isPro, resetPro } from './pro';
+import { SPONSORS, bindPro, isPro, resetPro, proNotice } from './pro';
 import { WordpressWxrImportSettingTab, normalizeSettings, type WordpressWxrImportSettings } from './settings';
 import { ImportModal } from './modal';
 import { cleanMapping, folderPath, planImport, readSnapshot, writePlan, type Plan, type Profile } from './model';
@@ -24,7 +24,7 @@ export default class WordpressWxrImportPlugin extends Plugin {
   this.register(pro.onChange(() => tab.update()));
   this.addCommand({ id: 'import-wxr', name: 'Import a local WordPress XML export', callback: () => { this.openImport(); } });
   this.addCommand({ id: 'compare-wxr', name: 'Compare a later WordPress export (Pro)', callback: () => {
-   if (!isPro()) { new Notice('Comparison needs Pro. Sign in with GitHub in the plugin settings.'); return; }
+   if (!isPro()) { proNotice('Comparison needs Pro.'); return; }
    this.openImport(true);
   } });
   this.app.workspace.onLayoutReady(() => {
