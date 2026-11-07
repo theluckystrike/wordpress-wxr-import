@@ -1,8 +1,9 @@
 {
 	"id": "wordpress-wxr-import",
 	"name": "WordPress WXR Import",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"changes": [
+		"The Pro notice of WordPress WXR Import now says that one payment turns on Pro in every NoteMods plugin.",
 		"The WordPress WXR Import notice for a Pro feature now has a Sponsor on GitHub button."
 	],
 	"tip": "Open _index.md in the import folder to find links to all imported posts and pages.",
